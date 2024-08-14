@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  /* background-color: rgb(36, 39, 41) !important; */
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: url(https://img.freepik.com/free-photo/business-concept-glass-world-laptop_1150-17694.jpg?t=st=1723610200~exp=1723613800~hmac=da9304dc1950338dc2ef336922dc4d55ef3960409faf9848ef780db552d24669&w=740) !important;
+}
+
+::-webkit-scrollbar {
+  width: 3.5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #464b50;
+}
