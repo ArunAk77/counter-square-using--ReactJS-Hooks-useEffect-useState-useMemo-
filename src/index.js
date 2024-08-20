@@ -1,19 +1,41 @@
-import React from "react";
-import { createRoot } from "react-dom/client";
-import "./index.css";
-import App from "./App";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Provider } from "react-redux";
-import { store } from "./store/store";
+import React, { useState, useMemo, useCallback, useEffect } from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
 
-const root = document.getElementById("root");
-const rootElement = createRoot(root);
+function Render() {
+  const [number, setNumber] = useState(0); 
+  const [result, setResult] = useState(null);
 
-rootElement.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </React.StrictMode>
-);
+  const cube = useMemo(() => {
+    return number * number * number ;
+  }, [number]);
 
+  const increment = useCallback(() => {
+    setNumber((prevNumber) => prevNumber + 1);
+  }, []);
+
+  const decrement = useCallback(() => {
+    setNumber((prevNumber) => prevNumber - 1);
+  }, []);
+
+  useEffect(() => {
+    console.log("Connection Is Completed: " + cube);
+    setResult(cube);
+  }, [number, cube]);
+
+  return (
+    <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
+      <h2>Counter Cube</h2>
+      <p style={{ fontSize: '18px' }}>Current number: {number}</p>
+      <p style={{ fontSize: '18px' }}>Cube of the number: {result}</p>
+      <button onClick={increment} style={{ padding: '10px 20px', marginRight: '10px' }}>
+        Increment
+      </button>
+      <button onClick={decrement} style={{ padding: '10px 20px' }}>
+        Decrement
+      </button>
+    </div>
+  );
+}
+
+ReactDOM.render(<Render />, document.getElementById('root'));
