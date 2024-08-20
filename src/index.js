@@ -7,7 +7,7 @@ function Render() {
   const [result, setResult] = useState(null);
 
   const cube = useMemo(() => {
-    return number * number * number ;
+    return number * number ;
   }, [number]);
 
   const increment = useCallback(() => {
@@ -25,9 +25,9 @@ function Render() {
 
   return (
     <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
-      <h2>Counter Cube</h2>
+      <h2>Counter Square</h2>
       <p style={{ fontSize: '18px' }}>Current number: {number}</p>
-      <p style={{ fontSize: '18px' }}>Cube of the number: {result}</p>
+      <p style={{ fontSize: '18px' }}>Square of the number: {result}</p>
       <button onClick={increment} style={{ padding: '10px 20px', marginRight: '10px' }}>
         Increment
       </button>

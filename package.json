@@ -1,6 +1,5 @@
 {
-  "name": "newsapp",
-  "homepage": "https://arunak77.github.io/news-website-using--React-JS",
+  "name": "CounterSquare",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
